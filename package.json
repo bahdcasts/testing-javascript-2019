@@ -10,7 +10,8 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "webpack --production",
     "start": "node dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "test:e2e": "cypress open"
   },
   "dependencies": {
     "@fullstackjs/mail": "^1.0.7",
@@ -44,6 +45,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-module-resolver": "^3.2.0",
     "css-loader": "^2.1.1",
+    "cypress": "^3.2.0",
     "glob-all": "^3.1.0",
     "jest": "^24.7.1",
     "mini-css-extract-plugin": "^0.5.0",
