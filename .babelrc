@@ -1,0 +1,28 @@
+{
+  "presets": [
+      "@babel/preset-env"
+    ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "@": "./",
+        "@client": "./client",
+        "@server": "./server",
+        "@store": "./client/store",
+        "@pages": "./client/pages",
+        "@models": "./server/models",
+        "@routes": "./server/routes",
+        "@config": "./server/config",
+        "@validators": "./server/validators",
+        "@components": "./client/components",
+        "@middleware": "./server/middleware",
+        "@controllers": "./server/controllers",
+      }
+    }],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import"
+  ],
+  "ignore": ["server/public/**/*.js"]
+}
