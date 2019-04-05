@@ -2,22 +2,9 @@
  * @jest-environment node
  */
 import User from '@models/User'
-import mongoose from 'mongoose'
-import jwt from 'jsonwebtoken'
-import config from '@config'
+import Response from '@tests/utils/response'
 import authMidleware from '@middleware/auth'
-
-class Response {
-    status(status) {
-        this.status = status
-
-        return this
-    }
-
-    json(data) {
-        return data
-    }
-}
+import { connect, disconnect } from '@tests/utils/mongoose'
 
 
 describe('The auth middleware', () => {
@@ -29,7 +16,7 @@ describe('The auth middleware', () => {
     let createdUser
 
     beforeAll(async () => {
-        await mongoose.connect('mongodb://localhost:27017/auth-app_test', { useNewUrlParser: true })
+        await connect()
         createdUser = await User.create(user)
     })
 
@@ -69,8 +56,7 @@ describe('The auth middleware', () => {
         })
     })
 
-
     afterAll(async () => {
-        await mongoose.connection.close()
+        await disconnect()
     })
 })

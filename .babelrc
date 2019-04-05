@@ -9,6 +9,7 @@
         "@": "./",
         "@client": "./client",
         "@server": "./server",
+        "@tests": "./__tests__",
         "@store": "./client/store",
         "@pages": "./client/pages",
         "@models": "./server/models",
