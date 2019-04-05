@@ -5,7 +5,7 @@
             v-if="auth && !confirmed"
             class="border-t border-b text-brown bg-gold-lightest font-bold text-center px-4 py-5"
         >
-            <p class="text-lg">
+            <p class="text-lg" id="confirm-email">
                 Please confirm your email address. Didn&rsquo;t receive an email
                 ?
                 <span
@@ -39,11 +39,12 @@
                 </router-link>
             </div>
             <div class="flex items-center" v-else>
-                <span class="cursor-pointer hover:text-brown-darker text-brown">
+                <span id="auth-username" class="cursor-pointer hover:text-brown-darker text-brown">
                     Hey, <strong>{{ user.name }}</strong>
                 </span>
 
                 <span
+                    id="auth-logout"
                     @click="unsetAuth"
                     class="ml-8 cursor-pointer hover:text-brown-darker text-brown"
                 >
